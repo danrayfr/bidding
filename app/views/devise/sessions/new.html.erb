@@ -1,7 +1,7 @@
-<% provide(:title, "Login")%>
+<% provide(:title, "Sign In")%>
 <div class="px-12 pb-10">
   <div class="mb-4">
-    <h2 class="font-bold text-5xl text-gray-800 text-center">Login</h2>
+    <h2 class="font-bold text-5xl text-gray-800 text-center">Sign In</h2>
   </div>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,7 +17,7 @@
   </div>
 
   <% if devise_mapping.rememberable? %>
-    <div class="field">
+    <div class="mb-2">
       <%= f.check_box :remember_me, class:"w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300" %>
       <%= f.label :remember_me, class:"bml-2 text-sm font-medium text-gray-900 dark:text-gray-300" %>
     </div>
