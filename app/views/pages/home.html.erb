@@ -1,5 +1,12 @@
 <% provide(:title, "")%>
-<div>
-  <h1 class="font-bold text-5xl text-blue-500">Pages#index</h1>
-  <p data-controller="hello" data-action="click->hello#toggle">Find me in app/views/pages/index.html.erb</p>
+<div class="flex items-center justify-between pb-6 border-b">
+  <h1 class="font-bold text-5xl text-gray-900">Bidding</h1>
+  <p data-controller="hello" data-action="click->hello#toggle">Find me in app/views/pages/index.html.erb
+    <%= link_to "SignOut", destroy_user_session_path, data: { turbo_method: :delete } if user_signed_in?%>
+  </p>
+</div>
+<div class="flex flex-wrap -mx-1 lg:-mx-4">
+  <% for a in 1..6 do %>  
+    <%= render "products"%>
+  <% end %>
 </div>

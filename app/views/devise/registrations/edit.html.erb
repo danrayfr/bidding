@@ -1,0 +1,43 @@
+<% provide(:title, "Edit User")%>
+<div class="px-12 pb-10">
+  <div class="mb-4">
+    <h2 class="font-bold text-5xl text-gray-600 text-center">Edit <%= resource_name.to_s.humanize %></h2>
+  </div>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mb-2">
+    <%= f.label :email, class:"block text-sm font-medium text-gray-900"%><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5" %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="mb-2">
+    <%= f.label :password, class:"block text-sm font-medium text-gray-900"%> <i>(leave blank if you don't want to change it)</i><br />
+    <%= f.password_field :password, autocomplete: "new-password", class:"mt-2 border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5" %>
+    <% if @minimum_password_length %>
+      <br />
+      <em class="text-sm text-gray-600"><%= @minimum_password_length %> characters minimum</em>
+    <% end %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :password_confirmation, class:"block text-sm font-medium text-gray-900" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.label :current_password, class:"block text-sm font-medium text-gray-900 inline-block"%> <i class="sm-text text-gray-500">(we need your current password to confirm your changes)</i><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class:"border-gray-300 text-gray-800 text-sm rounded-lg focus:ring-teal-600 focus:border-teal-600 block w-full p-2.5" %>
+  </div>
+
+  <div class="mb-2">
+    <%= f.submit "Update", class:"text-white bg-teal-600 hover:bg-teal-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm w-full px-5 py-2.5 text-center" %>
+  </div>
+<% end %>
+
+<%= link_to "Back", :back, class:"text-gray-800" %>

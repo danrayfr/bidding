@@ -1,0 +1,11 @@
+danray:
+  first_name: "Dan Ray"
+  last_name: "Rollan"
+  email: "danrayrollan98@gmail.com"
+  role: "admin"
+
+genie:
+  first_name: "genie"
+  last_name: "co"
+  email: "genie@co.com"
+  role: "bidder"
