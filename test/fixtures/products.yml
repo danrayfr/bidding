@@ -1,0 +1,29 @@
+katana:
+  name: Katana
+  description: katana collection
+  lowest_bid: 100
+  starting_bid: 101
+  bidding_expiration: 2023-02-20 12:03:40
+  is_active: true
+  created_at: <%= 10.minutes.ago %>
+  user: danray
+
+axe:
+  name: Axe
+  description: axe collection
+  lowest_bid: 50
+  starting_bid: 51
+  bidding_expiration: 2023-02-20 12:03:40
+  is_active: true
+  created_at: <%= 20.minutes.ago %>
+  user: danray
+
+most_recent:
+  name: Relic
+  description: Relic collection
+  lowest_bid: 500
+  starting_bid: 501
+  bidding_expiration: 2023-02-20 12:03:40
+  is_active: true
+  created_at: <%= Time.zone.now %>
+  user: danray
