@@ -1,0 +1,29 @@
+<div class="mx-auto max-w-3xl p-8 grow">
+  <div>
+    <h2 class="text-gray-800 text-5xl"><%= @product.name %></h2>
+
+    <div class="mb-6 mt-6">
+        <% if @product.is_active %>
+          <span class="bg-teal-200 text-teal-800 rounded uppercase font-semibold tracking-wide px-5 py-2 text-right">Open</span>
+        <% end %>
+    </div>
+        
+    <p class="text-sm italic">Closing on 
+    <span datetime="Sat Oct 08 2016 19:00:00 GMT-0500 (Central Daylight Time)"><%= @product.bidding_expiration.strftime("%B %d %Y %H:%M") %></span>.
+    </p>
+            
+    <div class="content post mb-6 mt-6">
+      <div class="mb-6">
+        <%= image_tag("https://source.unsplash.com/random/350x350", class: "w-full object-cover object-center rounded-lg shadow-md")%>
+      </div>
+      <p class="text-gray-900 font-bold text-xl mb-2"><span class="text-gray-700 text-md font-normal">Lowest Biddable Amount:</span>$ <%= @product.lowest_bid%></p>
+      <p class="text-gray-900 font-bold text-xl mb-2"><span class="text-gray-700 text-md font-normal">Starting Bid Amount:</span>$  <%= @product.starting_bid%></p>
+      <div class="">
+        <%= @product.description %>
+      </div>
+    </div>
+    
+    <%= link_to "Previous", products_path, class:"uppercase text-xs mt-6"%>
+        
+  </div>
+</div>
