@@ -1,24 +1,48 @@
-# README
+# Ruby on Rails Online Bidding application
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Before you Get started
 
-Things you may want to cover:
+Here are the following version of Ruby on Rails I'm using when doing this project.
 
-* Ruby version
+```
+$ gem -v 3.4.1
+$ bundler -v 2.4.1
+$ ruby -v 3.2.0
+$ rails -v 7.0.4.2
+```
 
-* System dependencies
+## Getting started
 
-* Configuration
+To get started with the app, clone the repo and then install the needed gems:
 
-* Database creation
+```
+$ gem install bundler -v 2.4.1
+$ bundle _2.4.1_ config set --local without 'production'
+$ bundle _2.4.1_ install
+```
 
-* Database initialization
+Create the database :
 
-* How to run the test suite
+```
+$ rails db:create
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Next, migrate the database:
 
-* Deployment instructions
+```
+$ rails db:migrate
 
-* ...
+$ rails db:seed # optional
+```
+
+Finally, run the test suite to verify that everything is working correctly:
+
+```
+$ rails test
+```
+
+If the test suite passes, you'll be ready to run the app in a local server:
+
+```
+$ rails server
+```
