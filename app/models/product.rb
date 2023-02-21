@@ -1,6 +1,7 @@
 
 class Product < ApplicationRecord
   belongs_to :user
+  has_many :bids, dependent: :destroy
 
   validates :name, presence: true, length: { maximum: 80 }
   validates :description, presence: true
@@ -9,5 +10,4 @@ class Product < ApplicationRecord
   validates :bidding_expiration, presence: true
   
   default_scope -> { order(created_at: :desc)}
-  
 end

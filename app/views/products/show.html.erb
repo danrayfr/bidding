@@ -22,7 +22,14 @@
         <%= @product.description %>
       </div>
     </div>
-    
+
+
+    <% if Bid.exists?(user_id: current_user.id, product_id: @product.id)%>
+     <p class="text-md font-semibold"> You already have bid offer to this product.</p>
+    <% else %>
+      <%= render "bids/form", product: @product%>
+    <% end %>
+    <br>
     <%= link_to "Previous", products_path, class:"uppercase text-xs mt-6"%>
         
   </div>

@@ -6,6 +6,7 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get root" do
+    sign_in users(:danray)
     get root_url
     assert_response :success
     assert_select "title", "#{@base_title}"

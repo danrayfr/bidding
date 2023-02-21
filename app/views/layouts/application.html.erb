@@ -14,8 +14,7 @@
   <body>
     <header>
       <%= render "shared/navbar" %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
+      <%= render "layouts/notifications"%>
     </header>
     <main class="container my-12 mx-auto px-4 md:px-12">
       <%= yield %>

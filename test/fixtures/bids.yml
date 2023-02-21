@@ -1,0 +1,9 @@
+one:
+  bid_offer_amount: 200
+  user: genie
+  product: katana
+
+two:
+  bid_offer_amount: 500
+  user: genie
+  product: axe

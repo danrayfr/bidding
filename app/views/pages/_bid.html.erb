@@ -5,7 +5,7 @@
       
       <div class="bg-white p-6 rounded-lg shadow-lg">
         <div class="flex items-baseline">
-          <% if product.is_active %>
+          <% if bid.product.is_active %>
             <span class="bg-teal-200 text-teal-800 text-xs px-2 inline-block rounded-full  uppercase font-semibold tracking-wide">
               Open
             </span>
@@ -15,19 +15,17 @@
             </span>
           <% end %>
           <div class="ml-2 text-gray-600 uppercase text-xs font-semibold tracking-wider">
-            Closing on  &bull; <%= product.bidding_expiration.strftime("%B %d %Y %H:%M")%>
+            Closing on  &bull; <%= bid.product.bidding_expiration.strftime("%B %d %Y %H:%M")%>
           </div>
         </div>
-        <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate"><%= product.name %></h4>
-        <div class="mt-1"><span class="text-gray-600 text-md"><%= product.description.truncate(50) %></span></div>
-        <div class="mt-1"><span class="text-gray-500 text-sm" >Lowest Allowable Bid:</span> $<%= product.lowest_bid %></div>
-        <div class="mt-1"><span class="text-gray-500 text-sm" >Starting Bidding Price:</span> $<%= product.starting_bid %></div>
+        <h4 class="mt-1 text-xl font-semibold uppercase leading-tight truncate"><%= link_to bid.product.name, product_path(bid.product) %></h4>
         <div class="mt-4">
-          <span class="text-teal-600 text-md font-semibold">96 bidders</span>
-          <span class="text-sm text-gray-600">(as of today)</span>
+          <div class="mt-1"><span class="text-gray-500 text-sm" >Lowest Allowable Bid:</span> $<%= bid.product.lowest_bid %></div>
+          <div class="mt-1"><span class="text-gray-500 text-sm" >Starting Bidding Price:</span> $<%= bid.product.starting_bid %></div>
+          <div class="mt-1 text-gray-900 text-2xl"><span class="text-gray-500 text-sm" >Your Offer:</span> $<%= bid.bid_offer_amount %></div>          
         </div>  
          <div class="mt-4">
-          <%= link_to "View Product", product_path(product), class:"bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"%>
+          <%= link_to "Update Offer", edit_product_bid_path(bid.product, bid), class:"bg-teal-500 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"%>
         </div>
       </div>
     </div>

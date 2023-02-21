@@ -8,7 +8,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true, length: { maximum: 50 }
   enum :role, %i(bidder admin)
 
-  has_many :products
+  has_many :products, dependent: :destroy
+  has_many :bids, dependent: :destroy
 
   def full_name
     "#{first_name} #{last_name}" 
