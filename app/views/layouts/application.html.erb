@@ -13,7 +13,7 @@
 
   <body>
     <header>
-      <%= render "shared/navbar" %>
+      <%= render "shared/navbar" unless current_page?(dashboard_path) || current_page?(dashboard_products_path) || current_page?(dashboard_users_path)  %>
       <%= render "layouts/notifications"%>
     </header>
     <main class="container my-12 mx-auto px-4 md:px-12">

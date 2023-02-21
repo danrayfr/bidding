@@ -21,7 +21,7 @@
       <div><%# More links can go here %></div>
       <% if user_signed_in? %>
         <%= link_to "Edit account", edit_user_registration_path, class: "p-3 hover:bg-gray-100 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
-        <%= link_to "Dashboard", "#", class: "p-3 hover:bg-gray-100 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" if current_user.admin? %>
+        <%= link_to "Dashboard", dashboard_path, class: "p-3 hover:bg-gray-100 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" if current_user.admin? %>
         <%= button_to "Log out", destroy_user_session_path, method: :delete, class:"p-3 hover:bg-gray-100 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
       <% else %>
         <%= link_to "Sign in", new_user_session_path, class:"p-3 hover:bg-gray-100 transition ease duration-300 rounded-lg text-center focus:bg-gray-100 lg:inline-block block" %>
