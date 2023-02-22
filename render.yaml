@@ -1,18 +1,18 @@
 databases:
   - name: online-bidding
-    databaseName: online-bidding
-    user: online-bidding
+    databaseName: mysite
+    user: mysite
 
 services:
   - type: web
-    name: online-bidding
+    name: mysite
     env: ruby
     buildCommand: "./bin/render-build.sh"
     startCommand: "bundle exec puma -C config/puma.rb"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: online-bidding
+          name: mysite
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
