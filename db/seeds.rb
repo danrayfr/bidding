@@ -8,4 +8,4 @@
 
 User.create!(first_name: "Dan Ray", last_name: "Rollan", email: "danrayrollan98@gmail.com", password: "password", password_confirmation: "password", role: User.roles[:admin])
 
-User.create!(first_name: "Ragde", last_name: "Falcis", email: "ragde@gorated.com", password: "password", password_confirmation: "password")
+User.create!(first_name: "Bruce", last_name: "Wayne", email: "bruce@wayne.com", password: "password", password_confirmation: "password")
