@@ -84,3 +84,4 @@ production:
   database: online_bidding_production
   username: online_bidding
   password: <%= ENV["ONLINE_BIDDING_DATABASE_PASSWORD"] %>
+  url: <%= ENV['DATABASE_URL'] %>
